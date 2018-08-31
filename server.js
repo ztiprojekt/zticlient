@@ -10,6 +10,6 @@ app.get('/*', function(req, res) {
     sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
-app.listen(8080, function () {
+app.listen(app.listen(process.env.PORT || 8080, function () {
     console.log('App started');
 });
