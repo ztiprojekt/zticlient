@@ -66,6 +66,16 @@
             </configuration>
           </execution>
 
+          <execution>
+            <id>node server.js</id>
+            <goals>
+              <goal>node</goal>
+            </goals>
+            <configuration>
+              <arguments>server.js</arguments>
+            </configuration>
+          </execution>
+
         </executions>
       </plugin>
     </plugins>
