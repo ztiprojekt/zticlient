@@ -1,0 +1,23 @@
+<mat-card fxFlex="35" style="margin:2px" *ngFor="let post of posts">
+    <mat-card-header>
+        <mat-card-title>
+          <h1 class="mat-heading">{{post.title}}</h1>
+        </mat-card-title>
+        <mat-card-subtitle>{{post.author?.username}} &bull; {{post.createdDate|date:'short'}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img matCardImage src="Card wide image source"> -->
+    <mat-card-content>
+        {{post.content}}
+    </mat-card-content>
+    <mat-card-actions align="start">
+        <a mat-button [routerLink]="['/post', 'edit', post.id]">
+          Edytuj
+        </a>
+        <a mat-button [routerLink]="['/post', 'view', post.id]">Wyswietl</a>
+    </mat-card-actions>
+</mat-card>
+
+<button mat-fab (click)="addPost()" class="fab-bottom-right" color="warn" >
+  <mat-icon>add</mat-icon>
+</button>
+

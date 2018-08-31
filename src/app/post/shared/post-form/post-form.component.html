@@ -1,0 +1,38 @@
+<form id="form" #f="ngForm" name="form" class="form" (ngSubmit)="submit()">
+   <p>
+      <mat-form-field fxFlex  style="border-style: outset;">
+          <input matInput
+           id="title"
+           name="title"
+           #title="ngModel"
+           [(ngModel)]="post.title"
+           required/>
+          <mat-error align="start" *ngIf="title.hasError('required')">
+            Wymagany tytul posta
+          </mat-error>
+        </mat-form-field>
+   </p>
+  <p>
+      <mat-form-field fxFlex style="border-style: outset;">
+          <textarea  matInput
+            #content="ngModel"
+            name="content"
+            id="content"
+            [(ngModel)]="post.content"
+            rows="8"
+            required
+            minlength="10">
+          </textarea>
+          <mat-error align="start" *ngIf="content.hasError('required')">
+              To pole nie moze byc puste
+          </mat-error>
+          <mat-error align="start" *ngIf="content.hasError('minlength')">
+           wymagane rzynajmniej 10 znakow
+          </mat-error>
+      </mat-form-field>
+  </p>
+  <p>
+      <button mat-button mat-raised-button color="primary" type="submit" [disabled]="f.invalid || f.pending">  {{'save'}}</button>
+  </p>
+
+</form>

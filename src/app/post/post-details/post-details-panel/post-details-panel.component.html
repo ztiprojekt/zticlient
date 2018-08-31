@@ -1,0 +1,20 @@
+<mat-card fxFlex>
+    <mat-card-header>
+        <mat-card-title><h1 class="mat-display-1">{{post.title}}</h1></mat-card-title>
+        <mat-card-subtitle> &bull; {{post.createdDate|date:'short'}} </mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img matCardImage src="Card wide image source"> -->
+    <mat-card-content>
+        {{post.content}}
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+        <p>
+            <a mat-raised-button color="primary" class="mat-button-lg" (click)="deletePost(post.id)">DELETE</a>
+        </p>
+    </mat-card-actions>
+  <mat-card-footer>
+    Przejdz do 
+    <a [routerLink]="['','post', 'list']">ogloszen</a>
+  </mat-card-footer>
+</mat-card>

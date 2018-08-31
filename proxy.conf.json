@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "https://blooming-ravine-50079.herokuapp.com",
+    "changeOrigin": false,
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": { "^/api": "" }
+  }
+}
