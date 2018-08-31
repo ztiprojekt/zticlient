@@ -66,16 +66,6 @@
             </configuration>
           </execution>
 
-          <execution>
-            <id>npm start</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <configuration>
-              <arguments>start</arguments>
-            </configuration>
-          </execution>
-
         </executions>
       </plugin>
     </plugins>
